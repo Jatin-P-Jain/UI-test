@@ -1,0 +1,22 @@
+const longest_consec = (strArr,k) => {
+    let max_len = 0
+    let max_concat_str = ""
+    const n = strArr.length
+    if (  n === 0 || k > n || k <= 0) return "Nothing"
+    for (let i = 0 ; i<strArr.length ; i++){
+        concat_str = strArr.slice(i,i+k).join("");
+        concat_str_len = concat_str.length;
+        if (max_len<concat_str_len){
+            max_concat_str = concat_str;
+            max_len= concat_str_len;
+        }
+    }
+    return max_concat_str;
+}
+
+const str = longest_consec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2);
+console.log(str);
+
+
+
+//Time Complexity : O(n)
